@@ -1,0 +1,13 @@
+.text {
+    color: #ebd8ff;
+    text-align: center;
+    font: 500 20px "Montserrat", sans-serif;
+    text-transform: uppercase;
+    margin-top: 16px;
+}
+
+.list {
+    margin-top: 62px;
+    list-style: none;
+    padding: 0;
+}

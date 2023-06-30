@@ -1,0 +1,11 @@
+.usercard {
+    display: block;
+    width: 380px;
+    height: 460px;
+    border-radius: 20px;
+    background-image: url(../../images/main-bg.png), linear-gradient(114.99deg, #471CA9 -0.99%, #5736A3 54.28%, #4B2A99 78.99%);
+    background-position: top 10% center;
+    background-size: auto;
+    background-repeat: no-repeat;
+    position: relative;
+}
