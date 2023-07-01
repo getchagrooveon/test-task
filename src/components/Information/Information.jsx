@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './Information.module.css';
 
-const Information = () => {
+const Information = ({tweets, followers}) => {
   return (
     <>
       <ul className={styles.list}>
-        <li className={styles.text}>tweets</li>
-        <li className={styles.text}>followers</li>
+        <li className={styles.text}>{tweets} tweets</li>
+        <li className={styles.text}>{followers} followers</li>
       </ul>
     </>
   );

@@ -1,10 +1,11 @@
-import React from 'react';
-import styles from './Button.module.css';
+import React, {useState} from 'react';
 
-const Button = () => {
+const Button = ({action}) => {
+  const [text, setText] = useState('follow');
+
   return (
-    <button type='button' className={styles.button}>
-      Follow
+    <button onClick={event => action(event, text)} type='button' className='button'>
+      {/* {text} */}
     </button>
   );
 };
