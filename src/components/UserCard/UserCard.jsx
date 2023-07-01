@@ -4,9 +4,7 @@ import DecorativeFrame from '../DecorativeFrame/DecorativeFrame';
 import Information from '../Information/Information';
 import Button from '../Button/Button';
 import {selectLoading, selectUsers} from '../../redux/selectors';
-import {useDispatch, useSelector} from 'react-redux';
-import {useEffect} from 'react';
-import {getUsers} from '../../services/API';
+import {useSelector} from 'react-redux';
 
 const UserCard = () => {
   const users = useSelector(selectUsers);
