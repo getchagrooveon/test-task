@@ -48,8 +48,8 @@ const UserCard = () => {
     dispatch(loadMoreThunk(page));
     dispatch(addPage());
   };
-  const handleFilter = event => {
-    const value = event.target.text;
+  const handleFilter = value => {
+    // const value = event.target.text;
     switch (value) {
       case 'All':
         dispatch(filterThunk());

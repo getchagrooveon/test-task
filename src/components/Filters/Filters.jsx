@@ -1,51 +1,32 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './Filters.module.css';
-import {NavLink} from 'react-router-dom';
 
 const Filters = ({action}) => {
+  const [selectedValue, setSelectedValue] = useState('All');
+
+  useEffect(() => {}, []); //
+
+  const handleChange = event => {
+    console.log(event.target.value);
+    console.log(selectedValue);
+    setSelectedValue(event.target.value);
+    action(event.target.value);
+  };
+
   return (
-    <div className={styles.filterContainer}>
-      <NavLink
-        onClick={event => action(event)}
-        className={({isActive, isPending}) => (isPending ? 'Filter' : isActive ? '' : '')}
-        style={({isActive, isPending}) => {
-          return {
-            backgroundColor: isPending ? '#ebd8ff' : '#5cd3a8',
-          };
-        }}
-        to='/home'
+    <label className={styles.filterContainer} htmlFor='select'>
+      <select
+        className={styles.filter}
+        id='select'
+        onChange={handleChange}
+        value={selectedValue}
+        // defaultValue='All'
       >
-        All
-      </NavLink>
-      <NavLink
-        onClick={event => action(event)}
-        className={({isActive, isPending}) =>
-          isPending ? 'Filter' : isActive ? 'FilterActive' : ''
-        }
-        style={({isActive, isPending}) => {
-          return {
-            backgroundColor: isPending ? '#ebd8ff' : '#5cd3a8',
-          };
-        }}
-        to='/home'
-      >
-        Following
-      </NavLink>
-      <NavLink
-        onClick={event => action(event)}
-        className={({isActive, isPending}) =>
-          isPending ? 'Filter' : isActive ? 'FilterActive' : ''
-        }
-        style={({isActive, isPending}) => {
-          return {
-            backgroundColor: isPending ? '#ebd8ff' : '#5cd3a8',
-          };
-        }}
-        to='/home'
-      >
-        To follow
-      </NavLink>
-    </div>
+        <option value='All'>All</option>
+        <option value='Following'>Following</option>
+        <option value='To follow'>To follow</option>
+      </select>
+    </label>
   );
 };
 

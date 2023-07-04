@@ -12,8 +12,7 @@ code {
     monospace;
 }
 
-.NavLink,
-.Filter {
+.NavLink {
   font: 600 18px "Montserrat", sans-serif;
   text-transform: uppercase;
   color: #373737;
@@ -25,7 +24,6 @@ code {
   text-align: center;
 }
 
-.NavLink.active,
-.FilterActive {
+.NavLink.active {
   background-color: #5cd3a8;
 }

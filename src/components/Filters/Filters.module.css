@@ -1,4 +1,4 @@
-.NavLink {
+.filter {
     font: 600 18px "Montserrat", sans-serif;
     text-transform: uppercase;
     color: #373737;
@@ -6,11 +6,12 @@
     border-radius: 10px;
     background-color: #ebd8ff;
     padding: 14px 14px;
-    width: 130px;
+    width: 190px;
+    height: 50px;
     text-align: center;
 }
 
-.NavLink.active {
+.filter.active {
     background-color: #5cd3a8;
 }
 
