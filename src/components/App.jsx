@@ -16,7 +16,8 @@ export const App = () => {
   useEffect(() => {
     dispatch(getUsersThunk(page));
     dispatch(addPage());
-  }, [dispatch]);
+    // eslint-disable-next-line
+  }, []);
 
   return !isLoading ? (
     <>
