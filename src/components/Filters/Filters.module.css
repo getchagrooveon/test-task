@@ -1,0 +1,23 @@
+.NavLink {
+    font: 600 18px "Montserrat", sans-serif;
+    text-transform: uppercase;
+    color: #373737;
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: #ebd8ff;
+    padding: 14px 14px;
+    width: 130px;
+    text-align: center;
+}
+
+.NavLink.active {
+    background-color: #5cd3a8;
+}
+
+.filterContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 0;
+    gap: 20px;
+}

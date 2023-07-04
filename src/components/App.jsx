@@ -1,18 +1,33 @@
 import {useEffect} from 'react';
-import UserCard from './UserCard/UserCard';
-import {useDispatch} from 'react-redux';
+import Home from './Home/Home';
+import {useDispatch, useSelector} from 'react-redux';
 import {getUsersThunk} from '../redux/operations';
+import {getPage, selectLoading} from '../redux/selectors';
+import Loader from './Loader/Loader';
+import {addPage} from '../redux/slice';
+import {Navigate, Route, Routes} from 'react-router-dom';
+import Tweets from './Tweets/Tweets';
 
 export const App = () => {
   const dispatch = useDispatch();
+  const isLoading = useSelector(selectLoading);
+  const page = useSelector(getPage);
 
   useEffect(() => {
-    dispatch(getUsersThunk());
+    dispatch(getUsersThunk(page));
+    dispatch(addPage());
   }, [dispatch]);
 
-  return (
-    <div>
-      <UserCard />
-    </div>
+  return !isLoading ? (
+    <>
+      <Routes>
+        <Route path='/home' element={<Home />} />
+        <Route path='/tweets' element={<Tweets />} />
+        <Route path='*' element={<Navigate to='/home' />} />
+      </Routes>
+      ;
+    </>
+  ) : (
+    <Loader />
   );
 };
